@@ -1,5 +1,5 @@
-const Dan = require("./Gabby.js");
+const Gabby = require("./Gabby.js");
    
-let p = new Gabby("Gabby", "Blue");
+let p = new Gabby("Gabby","Blue");
 
   p.speak();
