@@ -3,7 +3,7 @@
 class person {
         constructor(name,color){
             this.name = name;
-            this.color =color;
+            this.favoriteColor = color;
         }
 
         speak(){
