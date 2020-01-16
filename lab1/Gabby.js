@@ -1,8 +1,8 @@
 const person = require("./person.js");
 
 class Gabby extends person{
-    constructor(name, color){
-        super(name,color);
+    constructor(name, favoriteColor){
+        super(name, favoriteColor);
     }
 }
 module.exports = Gabby;

@@ -1,9 +1,9 @@
  const chalk = require("chalk");
 
 class person {
-        constructor(name,color){
+        constructor(name, favoriteColor){
             this.name = name;
-            this.favoriteColor = color;
+            this.favoriteColor = favoriteColor;
         }
 
         speak(){
