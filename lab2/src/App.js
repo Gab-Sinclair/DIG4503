@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from "./componets/HomePage";
+import HomePage from "./components/HomePage";
 import logo, { ReactComponent } from './logo.svg';
 import './App.css';
 
