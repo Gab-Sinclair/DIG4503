@@ -10,7 +10,7 @@ App.get("/name", function(request, response){
 
 App.get("/", function(request, response){
    console.log("got a request");
-   Response.send("Hi");
+   Response.send("Hello, world!");
 });
 
 
