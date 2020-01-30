@@ -1,16 +1,17 @@
 const Express = require("express");
 const App = Express();
-const Port = 80;
+const port = 80;
 const person = require("./person.js");
 
+App.use(Express.static("static"));
 
-App.get("/name", function(request, response){
-   Response.send(p.getName());
+App.get("/public", function(request, res){
+   res.send(p.getName());
 });
 
-App.get("/", function(request, response){
+App.get("/", function(request, res){
    console.log("got a request");
-   Response.send("Hello, world!");
+   res.send("Hello, world!");
 });
 
 
