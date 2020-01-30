@@ -1,7 +1,9 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
-const person = require("./person.js");
+const Person = require("./person.js");
+
+let p = new Person("Gabby","Green");
 
 App.use(Express.static("static"));
 
