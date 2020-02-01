@@ -2,7 +2,7 @@ const Express = require("express");
 const App = Express();
 const port = 80;
 
-App.use(Express.static("public"));
+App.use("/public",Express.static("public"));
 
 App.get("/", function(request, res){
    console.log("got a request");
