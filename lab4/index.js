@@ -14,6 +14,13 @@ App.use("/name/#name", Express.static(""));
     //show error is name does not exit
 
 
+//print path to console 
+   //decide if path is correct or incorrect
+      //routes that are requested print to console in green with chalk
+
+     //error paths print to console in red
+
+
 //console log when request is made on the server 
 App.get("/", function(req, res){
     console.log("Got a request");
