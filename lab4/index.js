@@ -2,21 +2,39 @@ const Express = require("express");
 const App = Express();
 const port = 80;
 const Person = require("./person.js")
+const faker = require('faker');
+
 const pokemons = require('json-pokemon');
 const pokemon = pokemons[0];
 
 
 let people =[];
 for(let i=0; i<87; i++){
-    people.push();
+    let randomName = faker.name.findName();
+    let randomColor = faker.commerce.color();
+        people.push(new Person(randomName, randomColor));
 }
 
 
 //request id from id file 
-App.get("/:id", (req,res)=>{
-    res.send(req.params);
- }
-);
+App.get("/people/name/:name", (req,res)=>{
+    for(i=0; i< people.length; i++){
+        if(req.paramas.name == people[i].name) { // checking if req path name matches name in array 
+            res.send(people[i]);
+        } 
+    }
+    res.send("invalid");
+ });
+
+App.get("/people/color/:color", (req,res)=>{
+    for(i=0; i< people.length; i++){
+        if(req.paramas.color == people[i].color) { // checking if req path name matches name in array 
+            res.send(people[i]);
+        } 
+    }
+});
+
+
      //send json object with matching id  
      //show error if id does not exit
 
