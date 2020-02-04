@@ -3,13 +3,18 @@ const App = Express();
 const port = 80;
 
 //request id from id file 
-App.use("/id/#id", Express.static(""));
+App.get("/:id", (req,res)=>{
+    res.send(req.params);
+}
+
+
+);
      //send json object with matching id  
      //show error if id does not exit
 
 
 //request name from name file  
-App.use("/name/#name", Express.static(""));
+//App.use("/name/#name", Express.static(""));
     //send json object qith matching name
     //show error is name does not exit
 
