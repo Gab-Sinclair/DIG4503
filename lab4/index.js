@@ -1,13 +1,21 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
+const Person = require("./person.js")
+const pokemons = require('json-pokemon');
+const pokemon = pokemons[0];
+
+
+let people =[];
+for(let i=0; i<87; i++){
+    people.push();
+}
+
 
 //request id from id file 
 App.get("/:id", (req,res)=>{
     res.send(req.params);
-}
-
-
+ }
 );
      //send json object with matching id  
      //show error if id does not exit
