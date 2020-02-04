@@ -2,12 +2,17 @@ const Express = require("express");
 const App = Express();
 const port = 80;
 
-//request id from id file send id 
+//request id from id file 
 App.use("/id/#id", Express.static(""));
+     //send json object with matching id  
 
-//request name from name file send name file 
+
+
+//request name from name file  
 App.use("/name/#name", Express.static(""));
-  
+    //send json object qith matching name
+
+    
 
 //console log when request is made on the server 
 App.get("/", function(req, res){
