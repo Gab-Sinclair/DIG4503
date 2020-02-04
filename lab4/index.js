@@ -36,7 +36,7 @@ App.get("/people/color/:color", (req,res)=>{
 
 
      //send json object with matching id  
-     //show error if id does not exit
+     //show error if id does not exist
 
 
 //request name from name file  
@@ -50,6 +50,8 @@ App.get("/people/color/:color", (req,res)=>{
       //routes that are requested print to console in green with chalk
 
      //error paths print to console in red
+
+
 
 
 //console log when request is made on the server 
