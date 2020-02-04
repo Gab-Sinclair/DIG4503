@@ -4,8 +4,6 @@ const port = 80;
 const Person = require("./person.js")
 const faker = require('faker');
 
-const pokemons = require('json-pokemon');
-const pokemon = pokemons[0];
 
 
 let people =[];
@@ -32,6 +30,7 @@ App.get("/people/color/:color", (req,res)=>{
             res.send(people[i]);
         } 
     }
+    res.send("invalid");
 });
 
 
@@ -48,7 +47,6 @@ App.get("/people/color/:color", (req,res)=>{
 //print path to console 
    //decide if path is correct or incorrect
       //routes that are requested print to console in green with chalk
-
      //error paths print to console in red
 
 
