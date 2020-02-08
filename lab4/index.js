@@ -3,22 +3,35 @@ const App = Express();
 const port = 80;
 
 //request id from id file 
-App.use("/id/#id", Express.static(""));
+App.get();
      //send json object with matching id  
      //show error if id does not exit
 
 
 //request name from name file  
-App.use("/name/#name", Express.static(""));
-    //send json object qith matching name
-    //show error is name does not exit
+App.get("pokemon/:name", (req, es) => {
+    //send json object with matching name
+    people.forEach((value)=> {
+        if(value.color == req.params.color) {
+            result = value;
+        }
+    });
+
+    //print path to console 
+	if(result.error){
+          //error paths print to console in red
+		console.log(chalk.red.path);
+    }
+	else{
+         //correct paths print to console in green
+		console.log(chalk.green.path);
+    res.send("result!");
+    }
+
+});
 
 
-//print path to console 
-   //decide if path is correct or incorrect
-      //routes that are requested print to console in green with chalk
-
-     //error paths print to console in red
+    
 
 
 //console log when request is made on the server 
