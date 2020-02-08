@@ -1,11 +1,23 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
+const Person = require("./person.js")
+const faker = require('faker');
+
+
+
+let people =[];
+for(let i=0; i<87; i++){
+    let randomName = faker.name.findName();
+    let randomColor = faker.commerce.color();
+        people.push(new Person(randomName, randomColor));
+}
+
 
 //request id from id file 
 App.get();
      //send json object with matching id  
-     //show error if id does not exit
+     //show error if id does not exist
 
 
 //request name from name file  
@@ -32,6 +44,8 @@ App.get("pokemon/:name", (req, es) => {
 
 
     
+
+
 
 
 //console log when request is made on the server 
