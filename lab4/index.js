@@ -4,7 +4,7 @@ const port = 80;
 const pokemon = require('json-pokemon');
 const chalk = require("chalk");
 
-result= {"error":"404 thing not found"}
+result = {"error":"404 thing not found"};
 
 //find id in pokemon array
 App.get("/id/:id", function(req, res){
@@ -38,9 +38,6 @@ else{
 }
 
 });
-
-
-
 
 //console log when request is made on the server 
 App.get("/", function(req, res){
