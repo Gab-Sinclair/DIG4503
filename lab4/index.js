@@ -1,56 +1,46 @@
 const Express = require("express");
 const App = Express();
-const port = 8000;
-const Poke = require("./poke.js")
-const pokemon = require('pokemon');
+const port = 80;
+const pokemon = require('json-pokemon');
+const chalk = require("chalk");
 
-//loop through list of pokemon
-for(let i=0; i<812; i++){
-    let names = pokemon.getName();
-    let ids = pokemon.getId();
-        pokemon.push(new Poke(id, name));
-}
-result ; 
+//find id in pokemon array
 
-//request id from name file 
-App.get("name/:name" , (req, res) => {
-     //find json object with matching name 
-     pokemon.forEach((value)=> {
-        if(value.names == req.params.name) {
-            result = value; 
+App.get("/id/:id", function(req, res){
+    pokemon.forEach((value)=>{
+        if(value.id ==req.params.id){
+            res.send(req.params);
         }
-    
 
-//request name from id file  
-App.get("id/:id", (req, res) => {
-    //send json object with matching id
-    pokemon.forEach((value)=> {
-        if(value.ids == req.params.id) {
-            result = value;
+});
+res.send("invalid");
+console.log(chalk.red.req.originalUrl);
+});
+
+
+
+//find name in pokemon array
+App.get("/name/:name", function(req, res){
+    pokemon.forEach((value)=>{
+        if(value.name ==req.params.name){
+            res.send(req.params);
+        
         }
-    });
-
-
-    //print path to console 
-	if(result.error){
-          //error paths print to console in red
-		console.log(chalk.red.path);
-    }
-	else{
-         //correct paths print to console in green
-		console.log(chalk.green.path);
-        res.send(result);
-    }
 
 });
- 
+res.send("invalid");
+console.log(chalk.red.params.path);
 });
-});
+
+
+
+
 
 
 //console log when request is made on the server 
 App.get("/", function(req, res){
     console.log("Got a request");
+    console.log(chalk.green(req.path));
     res.send("");
  });
 
