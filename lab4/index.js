@@ -4,7 +4,7 @@ const port = 80;
 const pokemon = require('json-pokemon');
 const chalk = require("chalk");
 
-result = {"error":"404 thing not found"};
+let result = {"error":"404 thing not found"};
 
 
 
@@ -19,6 +19,10 @@ App.get("/id/:id", function(req, res){
             console.log(chalk.red(req.path));
         }
 
+        else{
+            console.log(chalk.green(req.path));
+            res.send(result);
+        }
 });
 
 
@@ -30,16 +34,17 @@ App.get("/name/:name", function(req, res){
             result = value;
         }
     });
+
         if(result.error){
             console.log(chalk.red(req.path));
         }
 
-else{
-    console.log(chalk.green(req.path));
-    res.send(result);
-}
+        else{
+            console.log(chalk.green(req.path));
+            res.send(result);
+        }
 
-});
+        });
 
 
 //console log when request is made on the server 
@@ -48,7 +53,7 @@ App.get("/", function(req, res){
     console.log(chalk.green(req.path));
     res.send("");
  });
- 
+
 
  //listen on port 80 
 App.listen(port, function(){
