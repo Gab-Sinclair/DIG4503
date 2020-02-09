@@ -6,6 +6,8 @@ const chalk = require("chalk");
 
 result = {"error":"404 thing not found"};
 
+
+
 //find id in pokemon array
 App.get("/id/:id", function(req, res){
     pokemon.forEach((value)=>{
@@ -39,12 +41,14 @@ else{
 
 });
 
+
 //console log when request is made on the server 
 App.get("/", function(req, res){
     console.log("Got a request");
     console.log(chalk.green(req.path));
     res.send("");
  });
+ 
 
  //listen on port 80 
 App.listen(port, function(){
