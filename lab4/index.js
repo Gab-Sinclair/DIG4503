@@ -7,7 +7,6 @@ const chalk = require("chalk");
 let result = {"error":"404 thing not found"};
 
 
-
 //find id in pokemon array
 App.get("/id/:id", function(req, res){
     pokemon.forEach((value)=>{
