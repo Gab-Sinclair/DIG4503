@@ -1,33 +1,35 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
-const Person = require("./person.js")
-const faker = require('faker');
+const Poke = require("./poke.js")
+const pokemon = require('pokemon');
 
-
-
-let people =[];
-for(let i=0; i<87; i++){
-    let randomName = faker.name.findName();
-    let randomColor = faker.commerce.color();
-        people.push(new Person(randomName, randomColor));
+//loop through list of pokemon
+for(let i=0; i<812; i++){
+    let names = pokemon.getName();
+    let ids = pokemon.getId();
+        pokemon.push(new Poke(id, name));
 }
+result ; 
 
+//request id from name file 
+App.get("name/:name" , (req, res) => {
+     //find json object with matching name 
+     pokemon.forEach((value)=> {
+        if(value.names == req.params.name) {
+            result = value; 
+        }
+    });
 
-//request id from id file 
-App.get();
-     //send json object with matching id  
-     //show error if id does not exist
-
-
-//request name from name file  
-App.get("pokemon/:name", (req, es) => {
-    //send json object with matching name
-    people.forEach((value)=> {
-        if(value.color == req.params.color) {
+//request name from id file  
+App.get("id/:id", (req, res) => {
+    //send json object with matching id
+    pokemon.forEach((value)=> {
+        if(value.ids == req.params.id) {
             result = value;
         }
     });
+
 
     //print path to console 
 	if(result.error){
@@ -37,15 +39,12 @@ App.get("pokemon/:name", (req, es) => {
 	else{
          //correct paths print to console in green
 		console.log(chalk.green.path);
-    res.send("result!");
+        res.send(result);
     }
 
 });
-
-
-    
-
-
+ 
+});
 
 
 //console log when request is made on the server 
