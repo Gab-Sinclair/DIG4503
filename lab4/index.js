@@ -1,6 +1,6 @@
 const Express = require("express");
 const App = Express();
-const port = 80;
+const port = 8000;
 const Poke = require("./poke.js")
 const pokemon = require('pokemon');
 
@@ -19,7 +19,7 @@ App.get("name/:name" , (req, res) => {
         if(value.names == req.params.name) {
             result = value; 
         }
-    });
+    
 
 //request name from id file  
 App.get("id/:id", (req, res) => {
@@ -44,6 +44,7 @@ App.get("id/:id", (req, res) => {
 
 });
  
+});
 });
 
 
