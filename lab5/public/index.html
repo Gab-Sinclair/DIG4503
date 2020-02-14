@@ -1,0 +1,54 @@
+<html>
+    <script>
+         function findName(event){
+
+            event.preventDefault();
+            let element = document.querySelector("#pName");
+
+            fetch("/name/:name" + element.value)
+                .then((res) => {
+                    return res.json();
+                })
+                .then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+                    
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                    } else {
+                        reporting.innerHTML = processed.name;
+                    }
+
+                });
+
+         }
+
+
+         function findId(){
+
+            event.preventDefault();
+            let element = document.querySelector("#pId");
+
+
+
+         }
+    </script>
+<body>
+    <!--name form-->
+    <form id="p_name" onsubmit="findName()">
+        <input id="pName" type="text">
+        <button type="submit" >Submit</button>
+    </form>
+
+    <!--id form-->
+    <form id="p_id" onsubmit="findId()">
+        <input id="pId" type="text">
+        <button type="submit" >Submit</button>
+    </form>
+
+    <!--reporting div-->
+    <div id="reportingArea">
+
+    </div>
+</body>
+
+</html>
