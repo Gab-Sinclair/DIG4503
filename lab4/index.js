@@ -41,7 +41,6 @@ App.get("/name/:name", function(req, res){
         }
     });
    
-   console.log(result);
 
     if(result.error){
        console.log(chalk.red(req.path));
