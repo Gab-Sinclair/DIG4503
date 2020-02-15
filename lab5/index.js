@@ -18,9 +18,15 @@ App.get("/id/:id", function(req, res){
         }
 
     });
-    
-         res.json(result);
+    if(result.error){
+        console.log(chalk.red(req.path));
+        res.json(result);
 
+     }
+     else{
+        console.log(chalk.green(req.path));
+         res.json(result);
+        }
 });
 
 
@@ -35,16 +41,21 @@ App.get("/name/:name", function(req, res){
         }
     });
    
-        res.json(result);
-    
-    
+    if(result.error){
+        console.log(chalk.red(req.path));
+         res.json(result);
+     }
+     else{
+        console.log(chalk.green(req.path));
+         res.json(result);
+        }
 });
 
 
 //console log when request is made on the server 
 App.get("/", function(req, res){
     console.log("Got a request");
-    res.json("");
+    res.json();
  });
 
 

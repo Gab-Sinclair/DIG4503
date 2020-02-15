@@ -1,11 +1,16 @@
 <html>
     <script>
+
+
          function findName(event){
+
 
             event.preventDefault();
             let element = document.querySelector("#pName");
 
-            fetch("/name/:name" + element.value)
+            
+
+            fetch("/name/" + element.value)
                 .then((res) => {
                     return res.json();
                 })
@@ -15,33 +20,51 @@
                     if(processed.error) {
                         reporting.innerHTML = processed.error;
                     } else {
-                        reporting.innerHTML = processed.name;
+                        reporting.innerHTML = processed.id;
                     }
 
                 });
+                element.value ="";
 
          }
 
 
-         function findId(){
+         function findId(event){
 
             event.preventDefault();
             let element = document.querySelector("#pId");
 
+
+            fetch("/id/" + element.value)
+                .then((res) => {
+                    return res.json();
+                })
+                .then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+                    
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                       
+                    } else {
+                        reporting.innerHTML = processed.name;
+                    }
+
+                });
+       element.value = "" ;
 
 
          }
     </script>
 <body>
     <!--name form-->
-    <form id="p_name" onsubmit="findName()">
-        <input id="pName" type="text">
+    <form id="p_name" onsubmit="findName(event)">
+       <p>Find Name</p> <input id="pName" type="text">
         <button type="submit" >Submit</button>
     </form>
 
     <!--id form-->
-    <form id="p_id" onsubmit="findId()">
-        <input id="pId" type="text">
+    <form id="p_id" onsubmit="findId(event)">
+      <p>Find ID</p><input id="pId" type="text">
         <button type="submit" >Submit</button>
     </form>
 
