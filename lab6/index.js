@@ -6,7 +6,7 @@ const chalk = require("chalk");
 
 
 
-App.use("client/build",Express.static("client/build"));
+App.use("/",Express.static("client/build"));
 
 //find id in pokemon array
 App.get("/id/:id", function(req, res){
