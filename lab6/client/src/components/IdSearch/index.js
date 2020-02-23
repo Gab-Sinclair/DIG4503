@@ -6,7 +6,7 @@ import React from "react";
             event.preventDefault();
             let element = document.querySelector("#id");
 
-            fetch("/id/" + element.value)
+            fetch("http://localhost:80/pokemon/id/" + element.value)
             .then((res) => {
                 return res.json();
             })

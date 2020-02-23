@@ -3,13 +3,13 @@ const App = Express();
 const port = 80;
 const pokemon = require('json-pokemon');
 const chalk = require("chalk");
+const cors = require("cors");
 
-
-
+App.use(cors());
 App.use("/",Express.static("client/build"));
 
 //find id in pokemon array
-App.get("/id/:id", function(req, res){
+App.get("/pokemon/id/:id", function(req, res){
     let result = {"error":"404 thing not found"};
 
     pokemon.forEach((value)=>{
@@ -32,7 +32,7 @@ App.get("/id/:id", function(req, res){
 
 
 //find name in pokemon array
-App.get("/name/:name", function(req, res){
+App.get("/pokemon/name/:name", function(req, res){
     let result = {"error":"404 thing not found"};
     
     pokemon.forEach((value)=>{
