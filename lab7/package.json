@@ -1,0 +1,13 @@
+{
+  "name": "lab7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "client-start": "cd client && npm run start",
+    "start": "concurrently 'npm:server' 'npm:client-start'"
+  },
+  "author": "",
+  "license": "ISC"
+}
