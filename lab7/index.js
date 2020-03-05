@@ -37,7 +37,6 @@ App.get("/movies/title/:title", (req, res) => {
             // If it is not null, set result to whatever movie is
             result = movie;
         }
-        
         // Send as a response: either the "error" object or the movie object found
         res.json(result);
 
@@ -46,6 +45,19 @@ App.get("/movies/title/:title", (req, res) => {
 });
 
 // TODO: Add a route /movies/year/:year
+App.get("/movies/year/:year", (req, res) => {
+    let result = {"error": "Could not a movie with that title!"};
+   
+    database.findTitle(req.params.year).then((movie) => {
+        if(movie != null) {
+            result = movie;
+
+    }
+    res.json(result);
+  });
+
+
+});
 
 // Listen on 'port'
 App.listen(port, () => {
