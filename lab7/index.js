@@ -51,7 +51,6 @@ App.get("/movies/year/:year", (req, res) => {
     database.findYear(req.params.year).then((movie) => {
         if(movie != null) {
             result = movie;
-            console.log("im here");
     }
     res.json(result);
   });
