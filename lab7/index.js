@@ -48,7 +48,7 @@ App.get("/movies/title/:title", (req, res) => {
 App.get("/movies/year/:year", (req, res) => {
     let result = {"error": "Could not a movie with that title!"};
    
-    database.yearSearchFormSubmit(req.params.year).then((movie) => {
+    database.findYear(req.params.year).then((movie) => {
         if(movie != null) {
             result = movie;
     }
