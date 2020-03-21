@@ -8,6 +8,8 @@ class Home extends React.Component {
         <>
         <IdSearch/>
         <NameSearch/>
+        <br/>
+        <div id ="reportingArea"></div>
         </>
     
     )

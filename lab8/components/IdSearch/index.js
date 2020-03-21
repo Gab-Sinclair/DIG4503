@@ -1,10 +1,10 @@
 class IdSearch extends React.Component {
 
-    readScore(event) {
+  readScore = (event) => {
        event.preventDefault();
        let element = document.querySelector("#id");
 
-       fetch("http://localhost:80/pokemon/id/" + element.value)
+       fetch("api/pokemon/id/" + element.value)
        .then((res) => {
            return res.json();
        })
