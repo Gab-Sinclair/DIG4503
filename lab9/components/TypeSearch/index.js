@@ -17,7 +17,7 @@ class TypeSearch extends React.Component {
              if(processed.error) {
                  reporting.innerHTML = processed.error;
              } else {
-                 reporting.innerHTML = [processed.name, processed.id];
+                 reporting.innerHTML = [processed.name];
              } 
          });
   
