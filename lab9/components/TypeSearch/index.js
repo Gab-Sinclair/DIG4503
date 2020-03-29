@@ -1,11 +1,6 @@
-class TypeSearch extends React.Component {
-    constructor(props){
-    super(props)
-      this.State = {
-        types:[]
-      };
-    }
+import styles from './TypeSearch.module.css'
 
+class TypeSearch extends React.Component {
 
      readType = (event) => {
          event.preventDefault();
@@ -16,20 +11,14 @@ class TypeSearch extends React.Component {
              return res.json();
          })
          .then((processed) => {
-             
              let reporting = document.querySelector("#reportingArea");        
-             processed = this.state.types;
-                processed++;
-                this.setState({
-                types: [processed]
-            });
+            
 
              if(processed.error) {
                  reporting.innerHTML = processed.error;
              } else {
-                 reporting.innerHTML = this.state.types.name;
-             }
-  
+                 reporting.innerHTML = [processed.name, processed.id];
+             } 
          });
   
          element.value = "";
@@ -38,12 +27,14 @@ class TypeSearch extends React.Component {
   
      render() {
          return(
-             <div>
-                 <h2>Pokemon Type</h2>
+             <div className={styles.bod}>
+                 <h2 className={styles.fancy}>Enter Pokemon Type</h2>
                  <form onSubmit={this.readType}>
-                     <input id="type" type="text" />
-                     <button>Submit</button>
+                     <input className={styles.in} id="type" type="text" />
+                     <button  className={styles.but}>Submit</button>
                  </form>
+                 <br/>
+                 <div className={styles.resul} id ="reportingArea">Who's that Pokemon?!<br/> It's..</div>
              </div>
              );
          }

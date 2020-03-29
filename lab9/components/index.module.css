@@ -1,0 +1,25 @@
+.intro{
+    font-size: 75px;
+}
+
+.nam{
+   height:80px;
+   background-color:lightcoral;
+   text-align: left;
+}
+.id{
+    height:80px;
+    background-color: lightseagreen;
+    text-align: left;
+}
+.typ{
+    height:80px;
+    background-color: lightgreen;
+    text-align: left;
+}
+
+.lk{
+    text-decoration: none;
+    font-size: 70px;
+
+}

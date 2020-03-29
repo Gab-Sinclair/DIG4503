@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
-
+import styles from '../components/index.module.css'
 
 class Home extends React.Component {
   render(){
@@ -12,19 +12,27 @@ class Home extends React.Component {
           </title>
           </Head>
 
-        <p>
-          Hello welcome.
+        <p className={styles.intro}>
+          Hello welcome to the Pokemon API.
         </p>
-
+      <div className={styles.nam}>
         <Link href="/name">
-           <a>Name Page</a>
-        </Link> <br/>
-     <Link href="/id">
-           <a>Id Page</a>
-        </Link> <br/>
-      <Link href="/type">
-           <a>Type Page</a>
+           <a className={styles.lk}>Name Page</a>
         </Link><br/>
+        </div>
+
+        <div className={styles.id}>
+       <Link href="/id">
+           <a className={styles.lk}>Id Page</a>
+        </Link><br/>
+        </div>
+
+        <div className={styles.typ}>
+        <Link href="/type">
+           <a className={styles.lk}>Type Page</a>
+        </Link><br/>
+        </div>
+
         </div>
   
   );

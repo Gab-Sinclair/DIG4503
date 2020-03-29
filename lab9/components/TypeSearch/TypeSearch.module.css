@@ -1,0 +1,40 @@
+.bod{
+    background-color:lightblue;
+    text-align: center;
+    margin:60px auto 20px;
+    height:300px;
+    width:700px;
+    
+}
+
+.fancy{
+    font-family: cursive;
+    font-size:40px;
+}
+.in{
+    width:200px;
+
+}
+
+.but{
+    width:100px;
+    color:red;
+    background-color: yellow
+}
+
+.resul{
+    color:red;
+    font-size: 30px;
+    margin: 0 auto;
+}
+.lk{
+    text-decoration: none;
+    font-family: cursive;
+    font-size: 20px;
+}
+.pd{
+    background-color:lightgray;
+    width:200px;
+    margin:0 auto;
+    text-align: center;
+}

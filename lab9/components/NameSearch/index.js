@@ -1,3 +1,5 @@
+import styles from './NameSearch.module.css'
+
 class NameSearch extends React.Component {
 
     readName =(event) => {
@@ -24,12 +26,14 @@ class NameSearch extends React.Component {
 
    render() {
        return(
-           <div>
-               <h2>Pokemon Name</h2>
+           <div className={styles.bod}>
+               <h2 className={styles.fancy}>Enter Pokemon Name</h2>
                <form onSubmit={this.readName}>
-                   <input id="name" type="text" />
-                   <button>Submit</button>
+                   <input className={styles.in}  id="name" type="text" />
+                   <button className={styles.but}>Submit</button>
                </form>
+               <br/>
+                 <div className={styles.resul} id ="reportingArea">What's that Pokemon's id?!<br/> It's..</div>
            </div>
            );
        }

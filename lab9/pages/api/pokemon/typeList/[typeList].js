@@ -1,15 +1,18 @@
-import getPokemon from 'json-pokemon/getPokemon';
+import Pokemon from 'json-pokemon';
 
 export default (req, res) => {
 
-    let result = {"error": "Could not find name."};
+    let result = {"error": "Could not find Type."};
 
-    let pokemon = getPokemon.getPokemonByTypeList(req.query.name);
+    Pokemon.forEach((value) =>{
+        if(value.typeList == req.query.typeList){
+            result = value; 
+            }
+        
+    })
 
-    if(pokemon !== null) {
-        result = pokemon;
+   res.json(result);
     }
 
-    res.json(result);
+    
 
-}

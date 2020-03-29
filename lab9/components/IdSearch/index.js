@@ -1,3 +1,5 @@
+import styles from './IdSearch.module.css'
+
 class IdSearch extends React.Component {
 
     readScore = (event) => {
@@ -24,12 +26,14 @@ class IdSearch extends React.Component {
   
      render() {
          return(
-             <div>
-                 <h2>Pokemon Id</h2>
+             <div className={styles.bod}>
+                 <h2 className={styles.fancy}>Enter Pokemon Id</h2>
                  <form onSubmit={this.readScore}>
-                     <input id="id" type="text" />
-                     <button>Submit</button>
+                     <input className={styles.in} id="id" type="text" />
+                     <button className={styles.but}>Submit</button>
                  </form>
+                 <br/>
+                 <div className={styles.resul} id ="reportingArea">Who's that Pokemon?!<br/> It's..</div>
              </div>
              );
          }
