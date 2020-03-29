@@ -14,8 +14,6 @@ class Type extends React.Component {
              </Head>
 
                 <TypeSearch/>
-                 <br/>
-                  <div id ="reportingArea"></div>
 
                     <div className={styles.pd}>
                    <Link  href="/">
