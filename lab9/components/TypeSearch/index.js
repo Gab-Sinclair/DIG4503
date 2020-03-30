@@ -12,12 +12,13 @@ class TypeSearch extends React.Component {
          })
          .then((processed) => {
              let reporting = document.querySelector("#reportingArea");        
-            
+    
 
              if(processed.error) {
                  reporting.innerHTML = processed.error;
              } else {
-                 reporting.innerHTML = [processed.name];
+                 reporting.innerHTML = JSON.stringify([processed],null,6);
+                 
              } 
          });
   
